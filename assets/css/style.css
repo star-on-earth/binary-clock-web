@@ -1,0 +1,73 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #0a0a0f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Courier New', monospace;
+  overflow: hidden;
+}
+
+#wrapper { text-align: center; user-select: none; }
+
+#clock-grid {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.digit-col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+}
+
+.bit {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #111;
+  border: 1px solid #1a1a2e;
+  transition: background 0.12s, box-shadow 0.12s;
+}
+
+.bit.on {
+  background: #00f5d4;
+  box-shadow: 0 0 8px #00f5d4, 0 0 22px #00f5d480;
+}
+
+/* Different colors per pair */
+.col-h .bit.on  { background: #f72585; box-shadow: 0 0 8px #f72585, 0 0 22px #f7258580; }
+.col-m .bit.on  { background: #7209b7; box-shadow: 0 0 8px #b47aff, 0 0 22px #7209b780; }
+.col-s .bit.on  { background: #00f5d4; box-shadow: 0 0 8px #00f5d4, 0 0 22px #00f5d480; }
+
+.separator {
+  width: 2px;
+  background: #1a1a2e;
+  align-self: stretch;
+  border-radius: 2px;
+}
+
+#time-text {
+  color: #444;
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  margin-top: 8px;
+}
+
+#fs-btn {
+  margin-top: 20px;
+  background: none;
+  border: 1px solid #222;
+  color: #333;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: color 0.2s, border-color 0.2s;
+}
+#fs-btn:hover { color: #00f5d4; border-color: #00f5d4; }
